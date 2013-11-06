@@ -23,11 +23,15 @@ from collectors.lib import utils
 
 # If this user doesn't exist, we'll exit immediately.
 # If we're running as root, we'll drop privileges using this user.
-USER = "hadoop"
+USER = "hdfs"
+
+# Use JAVA_HOME env variable if set
+JAVA_HOME = os.getenv('JAVA_HOME', '/usr/java/default')
+JAVA = "%s/bin/java" % JAVA_HOME
 
 # We add those files to the classpath if they exist.
 CLASSPATH = [
-    "/usr/lib/jvm/java-6-sun/lib/tools.jar",
+    "%s/lib/tools.jar" % JAVA_HOME,
 ]
 
 # Map certain JVM stats so they are unique and shorter
