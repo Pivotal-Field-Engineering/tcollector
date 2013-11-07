@@ -98,7 +98,7 @@ def main(argv):
          # The remaining arguments are pairs (mbean_regexp, attr_regexp).
          # The first regexp is used to match one or more MBeans, the 2nd
          # to match one or more attributes of the MBeans matched.
-         "hadoop", "",                     # All HBase / hadoop metrics.
+         "RegionServer", "",               # All Regionserver metrics.
          "Memory$", "",                    # Heap stats
          "Threading", "Count|Time$",       # Number of threads and CPU time.
          "OperatingSystem", "OpenFile",    # Number of open files.
